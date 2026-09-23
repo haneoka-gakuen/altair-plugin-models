@@ -9,3 +9,6 @@ packages:
   - .dependencies/vega-renderer-three
 linkWorkspacePackages: true
 autoInstallPeers: false
+
+allowBuilds:
+  esbuild: true
