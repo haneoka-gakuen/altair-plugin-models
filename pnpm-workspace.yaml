@@ -1,0 +1,11 @@
+packages:
+  - .
+  - .dependencies/altair
+  - .dependencies/altair/packages/ui-react
+  - .dependencies/altair-plugin-adv
+  - .dependencies/vega-plugin-composite
+  - .dependencies/vega
+  - .dependencies/vega/packages/protocol
+  - .dependencies/vega-renderer-three
+linkWorkspacePackages: true
+autoInstallPeers: false

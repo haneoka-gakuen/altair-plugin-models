@@ -1,0 +1,60 @@
+name: CI
+on:
+  push:
+    branches: [main]
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          path: altair-plugin-models
+          persist-credentials: false
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          repository: haneoka-gakuen/vega
+          path: altair-plugin-models/.dependencies/vega
+          persist-credentials: false
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          repository: haneoka-gakuen/vega-renderer-three
+          path: altair-plugin-models/.dependencies/vega-renderer-three
+          persist-credentials: false
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          repository: haneoka-gakuen/vega-plugin-composite
+          path: altair-plugin-models/.dependencies/vega-plugin-composite
+          persist-credentials: false
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          repository: haneoka-gakuen/altair
+          path: altair-plugin-models/.dependencies/altair
+          persist-credentials: false
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          repository: haneoka-gakuen/altair-plugin-adv
+          path: altair-plugin-models/.dependencies/altair-plugin-adv
+          persist-credentials: false
+      - uses: pnpm/action-setup@0ebf47130e4866e96fce0953f49152a61190b271
+        with:
+          version: 11.14.0
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020
+        with:
+          node-version: 24
+      - working-directory: altair-plugin-models
+        run: pnpm install --no-frozen-lockfile
+      - working-directory: altair-plugin-models
+        run: |
+          pnpm --filter @haneoka/vega-protocol build
+          pnpm --filter @haneoka/vega build:core
+          pnpm --filter @haneoka/vega-renderer-three build
+          pnpm --filter @haneoka/vega-plugin-composite build
+          pnpm --filter @haneoka/altair build:core
+          pnpm --filter @haneoka/altair-ui-react build
+          pnpm --filter @haneoka/altair-plugin-adv build
+      - working-directory: altair-plugin-models
+        run: pnpm check

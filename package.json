@@ -1,0 +1,52 @@
+{
+  "name": "@haneoka/altair-plugin-models",
+  "version": "0.1.0",
+  "description": "Composed model documents, layer editing and model previews for Altair",
+  "type": "module",
+  "license": "MPL-2.0",
+  "sideEffects": false,
+  "files": [
+    "dist",
+    "LICENSE"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./models": {
+      "types": "./dist/models.d.ts",
+      "import": "./dist/models.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc -p tsconfig.json",
+    "format": "prettier --write . --ignore-unknown",
+    "format:check": "prettier --check . --ignore-unknown",
+    "check": "pnpm typecheck && pnpm build"
+  },
+  "packageManager": "pnpm@11.14.0",
+  "peerDependencies": {
+    "@haneoka/altair": "^0.1.0"
+  },
+  "dependencies": {
+    "@haneoka/altair-ui-react": "^0.1.0",
+    "@haneoka/altair-plugin-adv": "^0.1.0",
+    "@haneoka/vega-plugin-composite": "^0.1.0",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "lucide-react": "^1.27.0"
+  },
+  "devDependencies": {
+    "@haneoka/altair": "workspace:*",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "typescript": "^6.0.3",
+    "prettier": "3.7.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/haneoka-gakuen/altair-plugin-models.git"
+  }
+}
