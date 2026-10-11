@@ -48,5 +48,17 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/haneoka-gakuen/altair-plugin-models.git"
+  },
+  "keywords": [
+    "altair",
+    "visual-novel",
+    "live2d",
+    "character",
+    "composition",
+    "editor"
+  ],
+  "homepage": "https://github.com/haneoka-gakuen/altair-plugin-models#readme",
+  "bugs": {
+    "url": "https://github.com/haneoka-gakuen/altair-plugin-models/issues"
   }
 }
