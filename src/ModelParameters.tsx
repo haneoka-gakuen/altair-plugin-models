@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Plus, Trash2 } from "lucide-react";
+import { Plus, Trash2 } from "@haneoka/altair-ui-react";
 import { NumberInput, useEditorTranslator } from "@haneoka/altair-ui-react";
 
 export function ModelParameters({

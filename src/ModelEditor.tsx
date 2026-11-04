@@ -1,6 +1,6 @@
 import { authoredNodeLines, serializeAuthoredText } from "@haneoka/altair";
 import { useMemo, useState, useSyncExternalStore } from "react";
-import { ArrowDown, ArrowUp, Copy, Layers, Plus, Trash2 } from "lucide-react";
+import { ArrowDown, ArrowUp, Copy, Layers, Plus, Trash2 } from "@haneoka/altair-ui-react";
 import {
   parseCompositeModel,
   validateCompositeModel,

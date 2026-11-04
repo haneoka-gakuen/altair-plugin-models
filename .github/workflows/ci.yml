@@ -37,7 +37,7 @@ jobs:
           repository: haneoka-gakuen/altair
           path: altair-plugin-models/.dependencies/altair
           persist-credentials: false
-          ref: cd4e44d0670df22fe2e8f8ae3ebab3ab8365766d
+          ref: c826e9ac3a244325e0c7871f985d4f3b40c590f8
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
         with:
           repository: haneoka-gakuen/altair-plugin-adv

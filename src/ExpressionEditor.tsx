@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import { Plus, Trash2 } from "lucide-react";
+import { Plus, Trash2 } from "@haneoka/altair-ui-react";
 import type { AltairEditorDocument, AltairEditorWorkspace } from "@haneoka/altair";
 import { NumberInput, useEditorTranslator } from "@haneoka/altair-ui-react";
 import { ClipInsertion } from "./ClipInsertion.js";
