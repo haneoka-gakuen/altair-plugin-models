@@ -1,0 +1,13 @@
+export const MOTION_EDITOR_CSS = String.raw`
+.motion-editor{container:motion-editor/inline-size;width:100%;box-sizing:border-box;min-width:0;min-height:0;overflow:auto;padding:1rem;color:var(--md-sys-color-on-surface);background:var(--md-sys-color-surface)}
+.motion-editor .panel-heading{display:flex;flex-wrap:wrap;align-items:center;gap:.75rem;margin-block-end:1rem}.motion-editor h2{font:var(--md-sys-typescale-title-large);margin:0}.motion-editor .panel-heading>span{overflow-wrap:anywhere;color:var(--md-sys-color-on-surface-variant)}
+.motion-editor-panels{display:grid;gap:1.25rem;grid-template-columns:minmax(0,1.6fr) minmax(13rem,1fr)}
+.motion-editor-working,.motion-editor-settings{min-width:0;display:flex;flex-direction:column;gap:1rem}
+.motion-editor .field{display:flex;flex-direction:column;gap:.5rem;min-width:0}.motion-editor input,.motion-editor select,.motion-editor button{box-sizing:border-box;min-height:48px;max-width:100%;min-width:0}.motion-editor .field input,.motion-editor select{width:100%}.motion-editor-settings>.primary-button{width:100%;margin-block-start:auto}.motion-editor output{overflow-wrap:anywhere}
+.motion-point-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.75rem}.motion-control-fields{grid-column:1/-1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.75rem}
+.motion-curve-graph{width:100%;aspect-ratio:600/260;overflow:visible;touch-action:none;user-select:none;font:12px system-ui;fill:var(--md-sys-color-on-surface-variant)}
+.motion-curve-area{fill:var(--md-sys-color-surface-container);stroke:var(--md-sys-color-outline-variant)}.motion-curve-grid{stroke:var(--md-sys-color-outline-variant);stroke-width:.5}.motion-curve-baseline{stroke:var(--md-sys-color-secondary);stroke-dasharray:4 4}.motion-curve-line{fill:none;stroke:var(--md-sys-color-primary);stroke-width:2;vector-effect:non-scaling-stroke}.motion-curve-point{fill:var(--md-sys-color-primary)}.motion-curve-point.selected{stroke:var(--md-sys-color-surface);stroke-width:2}.motion-curve-handle{stroke:var(--md-sys-color-secondary);stroke-dasharray:3 3}.motion-curve-handle-point{fill:var(--md-sys-color-secondary)}
+.motion-editor-toggle{display:flex;align-items:center;gap:.75rem;min-height:48px}.motion-editor-toggle input{min-height:24px;width:24px}.motion-editor details{display:grid;gap:.75rem}.motion-editor summary{min-height:48px;align-content:center}.motion-editor-issue{min-height:48px;max-height:96px;overflow:auto;color:var(--md-sys-color-error);margin-block-start:1rem}
+@container motion-editor (max-width:700px){.motion-editor-panels{grid-template-columns:1fr}}
+@media(max-width:900px){.motion-editor-panels{grid-template-columns:1fr}}
+`;

@@ -81,3 +81,36 @@ file), `relativeModelPath(model, source)` and `convertWorkspaceModels`.
 ## License
 
 MPL-2.0. See [LICENSE](LICENSE).
+
+The motion editor opens existing `.motion3.json` and `.mtn` assets on the same
+workspace surface. Motion3 curves retain linear, Bezier, stepped and inverse
+stepped segments; MTN assets expose their sampled frames and frame rate.
+Unknown JSON fields and untouched MTN lines remain in the file. Dragging a
+point or handle commits one document edit when the drag ends.
+
+The document preview resolves its model and clip from the project's catalogue
+or the actual model manifest supplied by the editor host. It builds ordinary
+native In/Motion/Delay commands and uses the existing Vega preview. An existing
+clip can be inserted after a selected scene statement for one of that model's
+targets. Undo remains a scene-document operation.
+
+The expression editor opens `.exp.json` and `.exp3.json` in the same workspace.
+It edits parameter values, add/multiply/overwrite operations and fade times;
+legacy reference values and unknown fields remain in the source. Fade controls
+use seconds, including for legacy files whose stored times use milliseconds.
+Audition uses native In/Expression commands and the same model provider as game
+playback. Both clip editors share model ownership, target selection and scene
+insertion, placing new clips after the actor's initial motion and expression
+sequence before its first dialogue.
+
+Both clip editors exchange Motori schema 1 `.mtrmtn` and `.mtrexp` files.
+Import replaces the current native clip in one undoable edit and archives the
+original under `sources/motori/`. Export merges the native edits into that
+original, retaining unknown fields and inactive parameters. Motion conversion
+handles frame/fps timing, millisecond fades, linear/Bezier/step curves, Catmull
+tangents, part opacity and model opacity. Expression conversion preserves
+add/multiply/overwrite semantics, including Cubism 2 reference values.
+Endpoint frames may add one output frame to Motori's frame-count duration.
+Unresolved references and unrepresentable parameter fades produce an error
+beside the exchange controls. Full Motori projects and figure containers use
+their own formats and are not clip documents.
