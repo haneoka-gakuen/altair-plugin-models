@@ -41,6 +41,7 @@ export const modelDocumentEditor: AltairDocumentEditorContribution = {
     const wait = createStoryCommand("Wait");
     wait.id = `${id}:wait`;
     return {
+      scope: "scene",
       scene: { id, name: model.name ?? document.path, commands: [background, show, wait], extensions: {} },
       commandId: wait.id,
     };

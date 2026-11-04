@@ -1,8 +1,8 @@
 export const modelDocumentPath = (path: string): boolean => /(?:^|\/)model\.ya?ml$|\.model\.ya?ml$/iu.test(path);
 export const modelResourceFormat = (path: string): string | undefined => {
   if (modelDocumentPath(path)) return "composite";
-  if (/\.model3\.json$/iu.test(path)) return "cubism3";
-  if (/\.model\.json$/iu.test(path)) return "cubism2";
+  if (/(?:^|[/.])model3\.json$/iu.test(path)) return "cubism3";
+  if (/(?:^|[/.])model\.json$/iu.test(path)) return "cubism2";
   if (/\.gif$/iu.test(path)) return "gif";
   if (/\.(mp4|webm|ogv)$/iu.test(path)) return "video";
   if (/\.(png|jpe?g|webp|avif|svg)$/iu.test(path)) return "static-portrait";
